@@ -1,7 +1,7 @@
-import auth
+import stream
 
-def main(uri:str):
-    mongo_client = auth.Auth.connect()
+def main() -> None:
+    stream.MongoChangeStream.start()
 
 if __name__ == "__main__":
-    main("mongodb://localhost:27017/admin")
+    main()

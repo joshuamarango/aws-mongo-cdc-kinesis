@@ -4,7 +4,7 @@ from pymongo import (
     errors as MongoErrors
 )
 
-class Auth:
+class MongoAuthentication:
     def __init__(self) -> None:
         """Class initialised by fetching MongoDB URI from env"""
         self.mongo_client:str = os.environ.get("MONGODB_URI")
