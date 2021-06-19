@@ -5,9 +5,9 @@ from pymongo import (
 )
 
 class MongoAuthentication:
-    def __init__(self) -> None:
+    def __init__(self, mongodb_uri:str) -> None:
         """Class initialised by fetching MongoDB URI from env"""
-        self.mongo_client:str = os.environ.get("MONGODB_URI")
+        self.mongo_client:str = mongodb_uri
         
     def connect(self) -> MongoClient:
         """Connect to MongoDB instance using provided URI"""

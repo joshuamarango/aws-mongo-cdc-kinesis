@@ -6,7 +6,7 @@ from pymongo import (
 
 class MongoChangeStream:
     def __init__(self) -> None:
-        self.mongo_client:MongoClient = auth.MongoAuthentication.connect()
+        self.mongo_client:MongoClient = auth.MongoAuthentication().connect()
         self.watch_option:str = os.environ.get("WATCH_OPTION")
     
     def __watch_all(self):

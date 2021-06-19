@@ -1,11 +1,13 @@
-import pytest
-import pymongo
-from mockupdb import MockupDB
+from src.auth import MongoAuthentication
+import mockupdb
 
-server = MockupDB(auto_ismaster={"maxWireVersion": 3})
-server.run()
+server = mockupdb.MockupDB(auto_ismaster={"maxWireVersion": 3})
 
-client = pymongo.MongoClient(server.uri)
-collection = client.db.collection
+def test_mongodb_auth_connection():
+    """Test the auth service to make sure we can authenticate into Mongo"""
+    server.run()
+    mongo_client = MongoAuthentication(server.uri).connect()
+    return mongo_client.server_info()
 
-print(client)
+
+print(test_mongodb_auth_connection())
