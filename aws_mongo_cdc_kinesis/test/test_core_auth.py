@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from src.core.auth import MongoAuthentication
+from aws_mongo_cdc_kinesis.core.auth import MongoAuthentication
 import mockupdb
 
 

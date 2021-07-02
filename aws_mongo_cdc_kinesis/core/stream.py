@@ -1,5 +1,5 @@
 import os
-from src.core import auth
+from aws_mongo_cdc_kinesis.core import auth
 from pymongo import (
     MongoClient
 )
